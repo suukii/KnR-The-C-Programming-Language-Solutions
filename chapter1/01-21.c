@@ -57,5 +57,5 @@ void entab(char to[], char from[]) {
             s = 0;
         }
     }
-    to[j] = '\0';
+    to[j] = '\0'; // don't forget the null character
 }
