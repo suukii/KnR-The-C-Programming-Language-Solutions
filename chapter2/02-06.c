@@ -23,7 +23,7 @@ unsigned setbits(unsigned x, unsigned p, unsigned n, unsigned y) {
     // So we need to clear [p+n, p] bits of x first.
     // We need to do (x & 11..000..11)
     // We mentioned above that (~(~0 << n)) gave us 00..00111.
-    // Just right shift it we get 11..000..11。
+    // Just right shift it and do a |~| operation we get 11..000..11。
     unsigned b = ~((~(~0U << n)) << p);
 
     // Do a |&| operation to clear the bits in the range [p+n, p]
