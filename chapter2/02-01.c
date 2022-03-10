@@ -3,8 +3,14 @@
 // Harder if you compute them: determine the ranges of the various floating-point types.
 // gcc -o a.o 02-01.c && ./a.o
 
+// short is often 16 bits
+// long 32 bits
+// int either 16 or 32 bits, the natural size for a particular machine
+// but short is no longer than int, which is no longer than long
+
 #include <stdio.h>
 #include <limits.h>
+#include <float.h>
 
 int get_unsigned_short_bit();
 int get_signed_short_bit();
@@ -40,7 +46,10 @@ int main() {
     printf("  [unsigned long long] bits: %2d  range: %20llu ~ %llu\n", get_unsigned_long_long_bit(), 0LL, ULLONG_MAX);
     printf("    [signed long long] bits: %2d  range: %20lld ~ %lld\n", get_signed_long_long_bit(), LLONG_MIN, LLONG_MAX);
     putchar('\n');
-    // todo: float and double
+    printf("               [float] bits: %2c  range: %20e ~ %e\n", '#', FLT_MIN, FLT_MAX);
+    printf("              [double] bits: %2c  range: %20e ~ %e\n", '#', DBL_MIN, DBL_MAX);
+    printf("         [long double] bits: %2c  range: %20e ~ %e\n", '#', LDBL_MIN, LDBL_MAX);
+    putchar('\n');
 }
 
 int get_unsigned_short_bit() {
