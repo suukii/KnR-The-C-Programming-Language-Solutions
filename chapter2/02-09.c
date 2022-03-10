@@ -8,8 +8,8 @@
 // x-1 has the same bit representation as x except the rightmost bit is 0 instead of 1.
 // In this case (x & (x-1)) == (x-1). The rightmost 1-bit is deleted.
 
-// If x is event, e.g. 1001 1000
-//         then x-1 is 1001 0111
+// If x is even, e.g. 1001 1000
+//        then x-1 is 1001 0111
 // the representation of x-1 has the rightmost zeros of x becoming ones
 // and the rightmost one becoming a zero.
 // In this case (x & (x-1)) clears the rightmost 1-bit in x and the rightmost 1-bits from (x-1).
